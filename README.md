@@ -4,7 +4,7 @@
 
 The codes in this repository are based on our empirical study that investigates the correlation between complexity measures and generalization abilities of supervised deep learning classifiers for breast ultrasound images. The study is presented in the paper <a href="https://arxiv.org/abs/2103.03328">Evaluation of Complexity Measures for Deep Learning Generalization in Medical Image Analysis</a>.
 
-The performance of deep learning models for medical image analysis often decreases on images collected with different devices for data acquisition, device settings, or patient population. A better understanding of the generalization capacity on new images is crucial for clinicians’ trustworthiness in deep learning. Although significant research efforts have been recently directed toward establishing generalization bounds and complexity measures, still, there is often a significant discrepancy between the predicted and actual generalization performance. In addition, related large empirical studies (e.g., <a href="https://arxiv.org/abs/1912.02178">Jiang et al. (2019)</a>, <a href="https://arxiv.org/abs/2010.11924">Diugaite et al. (2020)</a>) have been primarily based on validation with general-purpose image datasets. 
+The performance of deep learning models for medical image analysis often decreases on images collected with different devices for data acquisition, device settings, or patient population. A better understanding of the generalization capacity on new images is crucial for cliniciansâ€™ trustworthiness in deep learning. Although significant research efforts have been recently directed toward establishing generalization bounds and complexity measures, still, there is often a significant discrepancy between the predicted and actual generalization performance. In addition, related large empirical studies (e.g., <a href="https://arxiv.org/abs/1912.02178">Jiang et al. (2019)</a>, <a href="https://arxiv.org/abs/2010.11924">Diugaite et al. (2020)</a>) have been primarily based on validation with general-purpose image datasets. 
 
 In our empirical study, we evaluate the correlation between 25 complexity measures (adopted from <a href="https://arxiv.org/abs/2010.11924">Diugaite et al. (2020)</a>) and generalization behavior of a family of deep learning networks on breast ultrasound images, using two types of predictor tasks: (i) classification, and (ii) joint classification and segmentation. In controlled experiment settings, we vary the depth of the networks to analyze generalization performance. The results indicate that PAC-Bayes flatness-based and path norm-based measures produce the most consistent explanation for the combination of models and data. Furthermore, the comparative results show improved generalization by the multi-task approach on both i.i.d. and o.o.d images. 
 
@@ -37,7 +37,7 @@ The architecture of the evaluated networks is shown in the following figure. Sin
 ![Network Architecture](figures/network.jpg)
 
 # Citation
-If you use the codes or the methods in your work, please cite the following <a href="https://arxiv.org/abs/2103.03328">article</a>:   
+If you use the codes in this repository, please cite the following <a href="https://arxiv.org/abs/2103.03328">article</a>:   
 
     @ARTICLE{Vakanski2021,
     title={Evaluation of Complexity Measures for Deep Learning Generalization in Medical Image Analysis},
