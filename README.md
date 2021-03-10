@@ -14,6 +14,8 @@ The following Jupyter notebooks have the deep learning models implemented in PyT
 * <a href="Experiment_2.ipynb">Single-task classification with regularization</a> [<a href="https://nbviewer.jupyter.org/github/avakanski/Evaluation-of-Complexity-Measures-for-Deep-Learning-Generalization-in-Medical-Image-Analysis/blob/main/Experiment_2.ipynb">on nbviewer</a>] - the networks apply implicit regularization via batch normalization and dropout layers, and are trained with early stopping until a non-decreasing cross-entropy loss on a validation subset of images is achieved.
 * <a href="Experiment_3.ipynb">Multi-task classification and segmentation with regularization</a> [<a href="https://nbviewer.jupyter.org/github/avakanski/Evaluation-of-Complexity-Measures-for-Deep-Learning-Generalization-in-Medical-Image-Analysis/blob/main/Experiment_3.ipynb">on nbviewer</a>] - the networks consist of classification and segmentation branches, and are trained until non-increasing classification accuracy on a validation subset of images is achieved.
 
+The codes use an open public dataset of breast ultrasound images known as <a href="https://ieeexplore.ieee.org/document/8003418">Dataset B</a> for implementing the proposed approach. The dataset consists of 163 breast ultrasound images, corresponding tumor type labels, and segmentation masks. The implementation in this repository is different from the empirical study presented in the paper, which is based on larger datasets of breast ultrasound images as well as larger number of trained models. 
+
 # Complexity Measures
 The following set of complexity measures is evaluated:
 * VC dimension-based measure - number of network parameters. 
@@ -24,12 +26,6 @@ The following set of complexity measures is evaluated:
 as the outputs to all-one inputs with squared parameters.
 * Flatness-based measures - are based on PAC-Bayes theory and estimate the flatness of the loss landscape in the vicinity of the solution for the network parameters. Six complexity measures are used.
 * Optimization-based measure - employs the number of iterations for achieving a classification error of 0.01 or 0.1.
-
-# Data
-This repository uses an open public dataset of breast ultrasound images known as <a href="https://ieeexplore.ieee.org/document/8003418">Dataset B</a> for implementing the proposed approach. The implementation in this repository is different from the empirical study presented in the paper, which is based on larger datasets of breast ultrasound images as well as larger number of trained models. 
-* Images - the dataset consists of 163 breast ultrasound images.
-* Masks - segmentation masks corresponding to the images, used for multi-task learning.
-* Labels - excel file with labels for the tumor type in images (benign or malignant).
 
 # Network Architecture
 The architecture of the evaluated networks is shown in the following figure. Single-task learning models employ a VGG-like classification branch which consists of a series of blocks with convolutional and max-pooling layers, followed by fully-connected layers. Multi-task learning models perform joint classification and segmentation, by adding a U-Net-like decoder to the encoder of the classification branch.
