@@ -14,6 +14,13 @@ The following Jupyter notebooks have the deep learning models implemented in PyT
 * <a href="Experiment_2.ipynb">Single-task classification with regularization</a> [<a href="https://nbviewer.jupyter.org/github/avakanski/Evaluation-of-Complexity-Measures-for-Deep-Learning-Generalization-in-Medical-Image-Analysis/blob/main/Experiment_2.ipynb">on nbviewer</a>] - the networks apply implicit regularization via batch normalization and dropout layers, and are trained with early stopping until a non-decreasing cross-entropy loss on a validation subset of images is achieved.
 * <a href="Experiment_3.ipynb">Multi-task classification and segmentation with regularization</a> [<a href="https://nbviewer.jupyter.org/github/avakanski/Evaluation-of-Complexity-Measures-for-Deep-Learning-Generalization-in-Medical-Image-Analysis/blob/main/Experiment_3.ipynb">on nbviewer</a>] - the networks consist of classification and segmentation branches, and are trained until non-increasing classification accuracy on a validation subset of images is achieved.
 
+The implementation in this repository presents the experimental procedure, but it is different from the empirical study in the paper, which employs families of trained models with different architectures for evaluating the correlation between the complexity measures and generalization behavior.
+
+The dataset is organized as follows:
+* data/images – folder with breast ultrasound images.
+* data/masks – folder with the corresponding segmentation masks, used for multi-task learning.
+* data/labels - excel file with labels for the tumor type in images (benign or malignant).
+
 # Complexity Measures
 The following set of complexity measures is evaluated:
 * VC dimension-based measure - number of network parameters. 
@@ -44,7 +51,6 @@ If you use the codes in this repository, please cite the following <a href="http
     primaryClass = {comp-sci},
     ee = {https://arxiv.org/abs/2103.03328},
     }
-
 
 # License
 <a href="License - MIT.txt">MIT License</a>
